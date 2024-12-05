@@ -8,7 +8,7 @@
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
 services:
-  web-dev:
+  web:
     image: aicargomation.azurecr.io/ai-hbl-web:v0
     command: gunicorn --bind=0.0.0.0:5000 --timeout 500 'app:app'
     expose:
@@ -18,12 +18,12 @@ services:
     mem_limit: 5000M
     restart: always
 
-  nginx-dev:
+  nginx:
     build: nginx
     ports:
       - 7001:80
     depends_on:
-      - web-dev
+      - web
     mem_limit: 512M
     restart: always
 
