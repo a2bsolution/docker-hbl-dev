@@ -9,7 +9,7 @@
 # https://github.com/docker/awesome-compose
 services:
   web:
-    image: aicargomation.azurecr.io/ai-hbl-web:v5
+    image: aicargomation.azurecr.io/ai-hbl-web:v6
     command: gunicorn --bind=0.0.0.0:5000 --timeout 500 'app:create_app()'
     expose:
       - 5000
